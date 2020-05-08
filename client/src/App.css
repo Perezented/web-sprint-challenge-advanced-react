@@ -123,11 +123,12 @@ p {
     margin: 0 auto;
     margin-top: 32px;
     padding: 24px;
-    background-color: #cf0;
+    background-color: rgb(29, 47, 53);
+    color: white;
 }
 
 form {
-    background: #0e101c;
+    background: #14241c;
     max-width: 400px;
     margin: 0 auto;
 }
@@ -155,7 +156,7 @@ label {
 }
 
 button {
-    background: #ec5990;
+    background: linear-gradient(#347a53, #1e4400);
     color: white;
     text-transform: uppercase;
     border: none;
@@ -167,7 +168,7 @@ button {
 }
 
 button:hover {
-    background: #df2e6c;
+    background: linear-gradient(#8be6b4, #47940c);
 }
 
 button:active,
@@ -237,10 +238,11 @@ pre {
 }
 
 .steps li {
-    background: #cf0;
+    background: linear-gradient(#68e09e, #05c92f);
     padding: 3px 15px;
     margin-right: 15px;
     position: relative;
+    border-radius: 3px;
 }
 
 .steps li:last-child {
