@@ -30,13 +30,58 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+```js
+import React, { Component } from 'react';
+import FirstChild from './firstChild'; // we need to import the child component first
+class ParentComponent extends Component {
+    //optional super depending on what you're doing
+    constructor() {
+        super();
+        this.state = {
+            itemInState,
+        };
+    }
+    // end of super section
+    render() {
+        return (
+            <h1>
+                I'm the parent component.
+                <FirstChild /> // Then we call it inside parent
+            </h1>
+        );
+    }
+}
+export default ParentComponent;
+```
+
+---
+
 2. Describe the different phases of the component lifecycle.
 
+## Mount, Construct, Render, Virtual Render, componentDidMount > Updating, Render, Virtual Render, componentDidUpdate > Unmounts, componentWillUnmount.
+
 3. Demonstrate an understanding of class component lifecycle methods.
+   Mounting
+   constructor() - called before everything is mounted, add props to the component.
+   render() - The compoent renders
+   componentDidMount() - The component was loaded and mounted onto the page
+
+Updating
+render() - The component re-renders
+componentDidUpdate() - There was an update to state, or new props added. (Also forceUpdate() but we didnt talk about it)
+
+Unmounting
+componentWillUnmount() - Right before the tab/browser closes. Usually for messages that let you know you have an unfinished form you might not want to lose.
+
+## +more on the react docs for each phase
 
 4. Define stateful logic.
 
+## Everything that is not HTML in the JSX. Most of the JavaScript.
+
 5. Describe how to test a React component with React Testing Library.
+
+## Using jest. Arrange, Act, Assert - Define the test, Search for it and do an action if needed. Assert what is to be expected in the DOM.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,32 +99,32 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+-   [ ] Create a forked copy of this project
+-   [ ] Add your team lead as collaborator on Github
+-   [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
+-   [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+-   [ ] Run `npm install` to download dependencies for the server.
+-   [ ] Run the server using `npm start`.
+-   [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+-   [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+-   [ ] Still inside the `client` folder run `npm run start` to run the client application.
+-   [ ] Your browser should open up the project as normal
 
 **Starting your test runner**
 
-- [ ] In the final terminal window, make sure you are in the `client` folder still
-- [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
+-   [ ] In the final terminal window, make sure you are in the `client` folder still
+-   [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
 
 **Commit and Push OFTEN!**
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+-   [ ] Implement the project on this Branch, **committing progress & changes often.**
+-   [ ] Push commits: `git push origin <firstName-lastName>`.
 
 ### Task 2: Project Requirements
 
@@ -89,9 +134,9 @@ Your finished project must include all of the following requirements:
 
 Display a list of the plants from the server. This should be done in the class component `PlantList`.
 
-- [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-- [ ] Set the data to a state property called `this.state.plants`
-- [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+-   [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
+-   [ ] Set the data to a state property called `this.state.plants`
+-   [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
 
 #### Shopping Cart
 
@@ -101,14 +146,14 @@ Nothing needs to be done here. You _will_ have to navigate to the cart page in y
 
 The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-- [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
+-   [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
 
 _Note: You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step._
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+-   [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+-   [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
@@ -117,9 +162,9 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- [ ] Add a filter input to the plant list page.
-- [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme ☀️ 🌙
-- [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
+-   [ ] Add a filter input to the plant list page.
+-   [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme ☀️ 🌙
+-   [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
 
 ```js
 const plants = {{}, {}, {}} // with each object being a mock plant
@@ -135,6 +180,6 @@ test("displays plants in cart", () => {
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+-   [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+-   [ ] Add your team lead as a reviewer on the pull-request
+-   [ ] Your team lead will count the project as complete after receiving your pull-request
