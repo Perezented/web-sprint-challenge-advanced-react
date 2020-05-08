@@ -28,7 +28,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+### 1. Explain how to build stateful class components.
+
+---
 
 ```js
 import React, { Component } from 'react';
@@ -56,15 +58,18 @@ export default ParentComponent;
 
 ---
 
-2. Describe the different phases of the component lifecycle.
+### 2. Describe the different phases of the component lifecycle.
 
-## Mount, Construct, Render, Virtual Render, componentDidMount > Updating, Render, Virtual Render, componentDidUpdate > Unmounts, componentWillUnmount.
+---
 
-3. Demonstrate an understanding of class component lifecycle methods.
-   Mounting
-   constructor() - called before everything is mounted, add props to the component.
-   render() - The compoent renders
-   componentDidMount() - The component was loaded and mounted onto the page
+Mount, Construct, Render, Virtual Render, componentDidMount > Updating, Render, Virtual Render, componentDidUpdate > Unmounts, componentWillUnmount.
+
+### 3. Demonstrate an understanding of class component lifecycle methods.
+
+Mounting
+constructor() - called before everything is mounted, add props to the component.
+render() - The compoent renders
+componentDidMount() - The component was loaded and mounted onto the page
 
 Updating
 render() - The component re-renders
@@ -73,15 +78,15 @@ componentDidUpdate() - There was an update to state, or new props added. (Also f
 Unmounting
 componentWillUnmount() - Right before the tab/browser closes. Usually for messages that let you know you have an unfinished form you might not want to lose.
 
-## +more on the react docs for each phase
++more on the react docs for each phase
 
-4. Define stateful logic.
+### 4. Define stateful logic.
 
-## Everything that is not HTML in the JSX. Most of the JavaScript.
+Everything that is not HTML in the JSX. Most of the JavaScript.
 
-5. Describe how to test a React component with React Testing Library.
+### 5. Describe how to test a React component with React Testing Library.
 
-## Using jest. Arrange, Act, Assert - Define the test, Search for it and do an action if needed. Assert what is to be expected in the DOM.
+Using jest. Arrange, Act, Assert - Define the test, Search for it and do an action if needed. Assert what is to be expected in the DOM.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
