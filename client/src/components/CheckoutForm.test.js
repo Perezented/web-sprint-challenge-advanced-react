@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByText } from '@testing-library/react';
 import CheckoutForm from './CheckoutForm';
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -9,7 +9,7 @@ test('form header renders', () => {
 });
 
 test('form shows success message on submit with form details', () => {
-    const { getByLabelText } = render(<CheckoutForm />);
+    const { getByLabelText, getByText } = render(<CheckoutForm />);
 
     getByLabelText(/first name/i); //Able to get the label text for first name
 
@@ -39,4 +39,7 @@ test('form shows success message on submit with form details', () => {
     expect(cityInput.value).toBe('CityInputedHere');
     expect(stateInput.value).toBe('StateGoesHere');
     expect(zipInput.value).toBe('12345');
+
+    fireEvent.click(getByText('Checkout'));
+    expect(getByText(/you have ordered some plants/i)).toBeInTheDocument();
 });
