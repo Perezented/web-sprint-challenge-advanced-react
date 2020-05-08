@@ -64,7 +64,11 @@ export default ParentComponent;
 
 Mount, Construct, Render, Virtual Render, componentDidMount > Updating, Render, Virtual Render, componentDidUpdate > Unmounts, componentWillUnmount.
 
+---
+
 ### 3. Demonstrate an understanding of class component lifecycle methods.
+
+---
 
 Mounting
 constructor() - called before everything is mounted, add props to the component.
@@ -80,11 +84,19 @@ componentWillUnmount() - Right before the tab/browser closes. Usually for messag
 
 +more on the react docs for each phase
 
+---
+
 ### 4. Define stateful logic.
+
+---
 
 Everything that is not HTML in the JSX. Most of the JavaScript.
 
+---
+
 ### 5. Describe how to test a React component with React Testing Library.
+
+---
 
 Using jest. Arrange, Act, Assert - Define the test, Search for it and do an action if needed. Assert what is to be expected in the DOM.
 
